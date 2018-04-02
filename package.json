@@ -1,8 +1,8 @@
 {
-  "name": "danny_site",
+  "name": "blackhat.ai",
   "version": "1.0.0",
-  "description": "My personal business website built in Vue.js",
-  "author": "eastrd",
+  "description": "A Vue.js project",
+  "author": "eastrd <yjia285@student.monash.edu>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -10,15 +10,10 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "ajv": "^6.0.0",
     "at-ui": "^1.3.3",
     "at-ui-style": "^1.5.1",
-    "css-base": "^1.0.0",
-    "punycode": "^2.1.0",
     "vue": "^2.5.2",
-    "vue-particle": "^1.0.0",
     "vue-particles": "^1.0.9",
-    "vue-router": "^3.0.1",
     "vue-typer": "^1.2.0"
   },
   "devDependencies": {
