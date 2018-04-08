@@ -1,7 +1,7 @@
 <template>
   <at-tabs id="navBar">
     <at-tab-pane v-for="tab in tabs" v-bind:label=tab.name v-bind:name=tab.name v-bind:icon=tab.icon_name>
-      <p> Some Content </p>
+      <p>  </p>
     </at-tab-pane>
   </at-tabs>
 </template>
@@ -12,9 +12,9 @@ export default {
   data () {
     return {
       tabs: [
-        { name: "TabOne",   icon_name: "icon-github"  },
-        { name: "TabTwo",   icon_name: "icon-twitter" },
-        { name: "TabThree", icon_name: "icon-pocket"  }
+        { name: "News Info",   icon_name: "icon-info"  },
+        { name: "Intel Search",   icon_name: "icon-search" },
+        { name: "Live Stats", icon_name: "icon-activity"  }
       ]
     }
   }
@@ -24,6 +24,6 @@ export default {
 
 <style>
 #navBar {
-
+  background-color: black;
 }
 </style>

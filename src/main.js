@@ -6,17 +6,17 @@ import VueParticles from 'vue-particles'
 import Welcome from '@/components/Welcome'
 import NavBar from '@/components/NavBar'
 import VueTyperPlugin from 'vue-typer'
-// import 'at-ui-style'
-// import AtUI from 'at-ui'
+import 'at-ui-style'
+import AtUI from 'at-ui'
 
 
 
 Vue.use(VueParticles)
 Vue.use(VueTyperPlugin)
-// Vue.use(AtUI)
+Vue.use(AtUI)
 
 new Vue({
   el: '#app',
   components: { ParticlePlanet, Welcome, NavBar },
-  template: '<div>  <ParticlePlanet/> <Welcome/> </div>'
+  template: '<div> <NavBar/> <ParticlePlanet/> <Welcome/> </div>'
 })

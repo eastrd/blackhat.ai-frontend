@@ -5,10 +5,10 @@
 
 <script>
 export default {
-  name: 'Welcome',
+  name: 'BlackHat Intelligence Solution',
   data () {
     return {
-      msg: 'Test Message'
+      msg: 'Welcome!\nBlackHat Intelligence Solution is currently under construction....\n\n:D\n--- admin@blackhat.ai ---'
     }
   }
 }
