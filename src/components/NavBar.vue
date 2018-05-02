@@ -1,8 +1,8 @@
 <template>
   <at-menu id="navBar" mode="horizontal" v-bind:active-name="focus_index" @on-select="handle_nav">
-    <at-menu-item v-for="tab in tabs" :key="tab.name" v-bind:name="tab.name">
-      <i :key="tab.name" v-bind:class="tab.icon_name" />
-      {{tab.name}}
+    <at-menu-item v-for="item in items" :key="item.name" v-bind:name="item.name">
+      <i :key="item.name" v-bind:class="item.icon_name" />
+      {{item.name}}
     </at-menu-item>
   </at-menu>
 </template>
@@ -13,7 +13,7 @@ export default {
   props: ["focus_index"],
   data () {
     return {
-      tabs: [
+      items: [
         { name: "Threat Search",   icon_name: "icon icon-search", link: "search"},
         { name: "Live Intel",   icon_name: "icon icon-activity", link: "intel"},
         { name: "API Doc", icon_name: "icon icon-layers", link: "doc"},
