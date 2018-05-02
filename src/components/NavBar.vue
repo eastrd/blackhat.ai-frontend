@@ -1,5 +1,5 @@
 <template>
-  <at-menu id="navBar" mode="horizontal" :active-name="focus_index">
+  <at-menu id="navBar" mode="horizontal" v-bind:active-name="focus_index" @on-select="handle_nav">
     <at-menu-item v-for="tab in tabs" :key="tab.name" v-bind:name="tab.name">
       <i :key="tab.name" v-bind:class="tab.icon_name" />
       {{tab.name}}
@@ -14,48 +14,28 @@ export default {
   data () {
     return {
       tabs: [
-        { name: "Threat Search",   icon_name: "icon icon-search"},
-        { name: "Live Intel",   icon_name: "icon icon-activity"},
-        { name: "API Doc", icon_name: "icon icon-layers"},
-        { name: "About", icon_name: "icon icon-info"}
+        { name: "Threat Search",   icon_name: "icon icon-search", link: "search"},
+        { name: "Live Intel",   icon_name: "icon icon-activity", link: "intel"},
+        { name: "API Doc", icon_name: "icon icon-layers", link: "doc"},
+        { name: "About", icon_name: "icon icon-info", link: "about"}
         ]
       }
     },
   methods: {
-    show_tab_info (obj) {
-      /*
-        As NavBar will default trigger an on-change event on the first tab,
-        initialize a Variable to ignore that one.
-      */
-      let _init_trigger = true
-      var index = obj["index"]
-      var name = obj["name"]
-
-      switch (index){
-        case 0:
-          console.log("Search")
-          if (!_init_trigger){
-            window.location = "/"
-          }
-          else {
-            _init_trigger = false
-          }
-          break;
-
-        case 1:
-          console.log("Live Intel")
+    handle_nav (name) {
+      switch (name){
+        case "Threat Search":
+          window.location = "/"
+          break
+        case "Live Intel":
           window.location = "/intel"
-          break;
-
-        case 2:
-          console.log("API Doc")
+          break
+        case "API Doc":
           window.location = "/doc"
-          break;
-
-        case 3:
-          console.log("About")
+          break
+        case "About":
           window.location = "/about"
-          break;
+          break
       }
     }
   }
