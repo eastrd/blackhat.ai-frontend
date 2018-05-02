@@ -22,24 +22,33 @@ export default {
 
   methods: {
     fetch_n_show () {
-      axios.get("http://localhost/api/stats")
+      axios.get("http://35.184.35.37/api/geoip/stats")
       .then((response)=>{
-        console.log(response.data)
-        this.create_globe('[["TestA",[-37.8136,144.9631,0.1]]]')
+        var data = response.data
+        var locations = []
+        for (var i = 0; i < data.length; i++) {
+          locations.push(
+            data[i]["lat"],
+            data[i]["lon"],
+            0.05
+          )
+        }
+        this.create_globe([["geoip", locations]])
       })
       .catch(e => {
         console.log(e)
       })
     },
 
-    create_globe (resp) {
+    create_globe (data) {
+      console.log(data)
       var container = document.getElementById( 'container' )
       var globe = new DAT.Globe( container )
 
-      var data = JSON.parse(resp)
       for (var i = 0; i<data.length; i++) {
           globe.addData( data[i][1], {format: 'magnitude', name: data[i][0]} )
       }
+
       globe.createPoints()
       globe.animate()
     }
