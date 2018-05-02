@@ -1,12 +1,14 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
+import Vuex from 'vuex'
 
 import 'at-ui-style'
 import AtUI from 'at-ui'
 
 import ParticlePlanet from './ParticlePlanet'
 import VueParticles from 'vue-particles'
+import VueTyperPlugin from 'vue-typer'
 
 import NavBar from '@/components/NavBar'
 import SearchBar from '@/components/SearchBar'
@@ -14,7 +16,12 @@ import Handbook from '@/components/Handbook'
 
 
 Vue.use(AtUI)
+Vue.use(Vuex)
 Vue.use(VueParticles)
+Vue.use(VueTyperPlugin)
+
+
+
 
 
 const NotFound = {
@@ -22,6 +29,7 @@ const NotFound = {
   template: '<div> <NavBar /> <ParticlePlanet/> <br/> <div style="color:white; text-align:center;"> Page Not Found </div> </div>',
   style: "color: white;"
 }
+
 
 const Search = {
   components: { ParticlePlanet, NavBar, SearchBar, Handbook },
@@ -46,13 +54,17 @@ const Doc = {
 
 
 
-
 const routes = {
   '/': Search,
   '/about': About,
   '/intel': Intel,
   '/doc': Doc
 }
+
+
+
+
+
 
 
 

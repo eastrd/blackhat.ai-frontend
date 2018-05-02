@@ -14,8 +14,8 @@ export default {
   data () {
     return {
       items: [
-        { name: "Threat Search",   icon_name: "icon icon-search", link: "search"},
-        { name: "Live Intel",   icon_name: "icon icon-activity", link: "intel"},
+        { name: "Threat Search", icon_name: "icon icon-search", link: "search"},
+        { name: "Live Intel", icon_name: "icon icon-activity", link: "intel"},
         { name: "API Doc", icon_name: "icon icon-layers", link: "doc"},
         { name: "About", icon_name: "icon icon-info", link: "about"}
         ]
