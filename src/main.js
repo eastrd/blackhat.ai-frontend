@@ -13,12 +13,14 @@ import VueTyperPlugin from 'vue-typer'
 import NavBar from '@/components/NavBar'
 import SearchBar from '@/components/SearchBar'
 import Handbook from '@/components/Handbook'
+import Map from '@/components/Map'
 
 
 Vue.use(AtUI)
 Vue.use(Vuex)
 Vue.use(VueParticles)
 Vue.use(VueTyperPlugin)
+
 
 
 
@@ -42,8 +44,8 @@ const About = {
 }
 
 const Intel = {
-  components: { NavBar },
-  template: '<div><NavBar focus_index="Live Intel" /> <p>Intel page</p> </div>'
+  components: { NavBar, Map},
+  template: '<div><NavBar focus_index="Live Intel" /> <Map /> </div>'
 }
 
 const Doc = {
@@ -60,8 +62,6 @@ const routes = {
   '/intel': Intel,
   '/doc': Doc
 }
-
-
 
 
 
