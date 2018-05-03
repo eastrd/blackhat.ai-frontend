@@ -39,13 +39,19 @@ export default {
       if (num > 1000) {
         return 0.6
       }
-      if (num > 100) {
-        return 0.4
+      if (num > 500) {
+        return 0.5
       }
-      if (num > 10) {
+      if (num > 100) {
+        return 0.35
+      }
+      if (num > 50) {
         return 0.2
       }
-      return 0.1
+      if (num > 10) {
+        return 0.1
+      }
+      return 0.05
     },
 
     fetch_n_show () {
