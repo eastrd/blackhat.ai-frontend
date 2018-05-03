@@ -13,7 +13,9 @@ import VueTyperPlugin from 'vue-typer'
 import NavBar from '@/components/NavBar'
 import SearchBar from '@/components/SearchBar'
 import Handbook from '@/components/Handbook'
+import IntelPage from '@/components/IntelPage'
 import Map from '@/components/Map'
+import StatTable from '@/components/StatTable'
 
 
 Vue.use(AtUI)
@@ -22,7 +24,9 @@ Vue.use(VueParticles)
 Vue.use(VueTyperPlugin)
 
 
-
+Vue.component('Map', Map);
+Vue.component('NavBar', NavBar)
+Vue.component('StatTable', StatTable)
 
 
 
@@ -34,22 +38,20 @@ const NotFound = {
 
 
 const Search = {
-  components: { ParticlePlanet, NavBar, SearchBar, Handbook },
+  components: { ParticlePlanet, SearchBar, Handbook },
   template: '<div> <NavBar focus_index="Threat Search" /> <ParticlePlanet/> <br/><br/> <SearchBar/> <br/><br/><br/> <Handbook/> </div>'
 }
 
 const About = {
-  components: { NavBar },
   template: '<div><NavBar focus_index="About" /> <p>About page</p> </div>'
 }
 
 const Intel = {
-  components: { NavBar, Map},
-  template: '<div><NavBar focus_index="Live Intel" /> <Map /> </div>'
+  components: { IntelPage },
+  template: '<div><NavBar focus_index="Live Intel" /> <IntelPage /> </div>'
 }
 
 const Doc = {
-  components: { NavBar },
   template: '<div><NavBar focus_index="API Doc" /> <p>Doc page</p> </div>'
 }
 
