@@ -48,7 +48,7 @@ const About = {
 
 const Intel = {
   components: { IntelPage },
-  template: '<div><NavBar focus_index="Live Intel" /> <IntelPage /> </div>'
+  template: '<div><NavBar focus_index="Live Intel" /> <br/><br/><br/> <IntelPage /> </div>'
 }
 
 const Doc = {
