@@ -165,10 +165,6 @@ export default {
 
 
 <style>
-.at-table {
-  background: rgba(0, 0, 0, 0.5)
-}
-
 .at-table__thead .at-table__cell {
   background-color: #222222;
   color: #EEEEEE;
