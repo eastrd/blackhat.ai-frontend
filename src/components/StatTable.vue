@@ -145,7 +145,11 @@ export default {
           "timestamp" : new Date(raw_data[i][0]).toLocaleString(),
           "src"   :   raw_data[i][1],
           "dest"  :   raw_data[i][2],
-          "data"  :   data.split("\\r\\n").join("\n").split(";").join("; ")
+          "data"  :   data.split("\\r\\n").map(
+            line => {
+              return line.length > 50 ? line.slice(0, 50) + "\n" + line.slice(50) : line 
+            }
+          ).join("\n")
         })
       }
       // Sync the outputting records array with saved user inputs
@@ -221,6 +225,7 @@ tbody > tr > .at-table__cell:first-of-type {
 
 p.at-notification__message {
   text-align: left;
-  max-width: 20em;
+  max-width: 10em;
+  white-space: pre;
 }
 </style>
