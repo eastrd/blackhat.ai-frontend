@@ -26,7 +26,7 @@ export default {
 
   methods: {
     submit_search () {
-      axios.post("http://localhost/api/search", {
+      axios.post("http://35.184.35.37/api/search", {
         query: this.search_query
       })
       .then((response)=>{
