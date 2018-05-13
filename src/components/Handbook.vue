@@ -14,9 +14,9 @@ export default {
 It allows you to do fuzzy searches and conditional partial searches.
 
 Sample Usage:
-    IP="192.168.0.1" and CMD="wget",
-    IP="192.168.*.*",
-    IP="{your_own_regex_expr}" or CMD="wget http:.*"
+    IP="192.168.0.1" CMD="wget",
+    IP="192.*.*.*",
+    IP="{your_own_regex_expr}" CMD="wget http:.*"
 `
     }
   },
