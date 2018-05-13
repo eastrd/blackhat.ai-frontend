@@ -1,17 +1,48 @@
 <template>
   <div class="center-block">
-    <at-input size="large" icon="search" :autofocus="true"></at-input>
+    <at-input
+      size="large"
+      icon="search"
+      :autofocus="true"
+      @keyup.enter.native="submit_search"
+      v-model="search_query"
+    >
+    </at-input>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'SearchBar',
+
   data () {
     return {
-      search_query: ''
+      search_query: '',
+      json_data: ''
+    }
+  },
+
+  methods: {
+    submit_search () {
+      axios.post("http://localhost/api/search", {
+        query: this.search_query
+      })
+      .then((response)=>{
+        let data = response.data
+
+        console.log(data.map(each => {
+            return each["IP"] + " : " + each["CMD"]
+        }).join("\n"))
+
+      })
+      .catch(e => {
+        console.log(e)
+      })
     }
   }
+
 }
 </script>
 
