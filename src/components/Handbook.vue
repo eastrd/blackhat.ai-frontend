@@ -9,17 +9,22 @@ export default {
   name: 'Handbook',
   data () {
     return {
-      rawHTML : `ip=192.168.0.1
-      ip=192.168.0.*
-      ip=192.168.*.*
-      cmd={your_regex_expr}`
+      instructions :
+`This search engine provides a 2-way binding lookup between IPs and Commands.
+It allows you to do fuzzy searches and conditional partial searches.
+
+Sample Usage:
+    IP="192.168.0.1" and CMD="wget",
+    IP="192.168.*.*",
+    IP="{your_own_regex_expr}" or CMD="wget http:.*"
+`
     }
   },
   methods: {
       pop_up_handbook () {
         this.$Modal.info({
           title: 'Search Engine Syntax',
-          content: 'ip=192.168.0.1\nip=192.168.0.*\nip=192.168.*.*\ncmd={your_regex_expr}',
+          content: this.instructions,
           showFooter: false,
           showClose: true,
           closeOnPressEsc: true,
