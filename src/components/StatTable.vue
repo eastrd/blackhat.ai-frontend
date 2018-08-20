@@ -120,7 +120,7 @@ export default {
     },
 
     fetch_tunnel_data () {
-      axios.get("http://35.184.35.37/api/live/data_intel")
+      axios.get("http://XXXXXXXXXXXXXXXXX/api/live/data_intel")
       .then((response)=>{
         var data = response.data
         // Loop through each data, Check duplication, Add into table
